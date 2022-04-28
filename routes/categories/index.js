@@ -1,16 +1,9 @@
 let express = require('express')
 let router = express.Router()
-const {create} = require("../../controllers/category")
+const {addCategory, getAllCategories} = require("../../controllers/category")
 let Categories = require('../../models/category')
 
-router.get("/get_all_categories", (req, res)=>{
-    Categories.find({},(err,data)=>{
-        if(!err){
-            res.send(data)
-        }
-    })
-})
-
-router.post("/add_category",create)
+router.get("/get_all_categories", getAllCategories)
+router.post("/add_category",addCategory)
 
 module.exports = router

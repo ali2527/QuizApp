@@ -3,11 +3,11 @@ let app = express();
 require("dotenv").config()
 const db = require("./config/db")
 
-db.connection.once('open',()=>{
-    console.log("db connected")
-}).on('error',()=>{
-    console.log("error in db connection")
-})
+// db.connection.once('open',()=>{
+//     console.log("db connected")
+// }).on('error',()=>{
+//     console.log("error in db connection")
+// })
 
 app.use(express.json())
 
