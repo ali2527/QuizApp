@@ -16,3 +16,20 @@ exports.getAllQuestions = (req,res)=>{
         res.send(data)
     } )
 }
+
+exports.editQuestion = (req,res)=>{
+
+    Question.findByIdAndUpdate(req.params.id, {text:req.body.text},{new:true}, (err,data)=>{
+        if(!err){
+            res.send(data)
+        }
+    })
+}
+
+exports.deleteQuestion = (req,res)=>{
+    Question.findByIdAndDelete(req.params.id,(err,data)=>{
+        if(!err){
+            res.send(data)
+        }
+    })
+}

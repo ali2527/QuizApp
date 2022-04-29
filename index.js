@@ -15,4 +15,4 @@ app.listen(process.env.PORT || 5000 , ()=>{
     console.log("listeing on port 5000")
 })
 
-app.use("/", require("./routes"))
+app.use("/", require("./routes"))   
